@@ -113,13 +113,115 @@
 //         return 0
 //     }
 // })
+
+
 // console.log(players)
-const arr = [5, 2, 1, 4, 5, 9, 10, 55];
+// const arr = [5, 2, 1, 4, 5, 9, 10, 55];
 
-const text = 0;
-arr.forEach(loopAry);
+// let text = 0;
+// arr.forEach(loopAry);
 
-function loopAry(value){
-    text += value;
+// function loopAry(value){
+//     text += value;
+// }
+// console.log(arr)
+
+
+// function arrMap(value){
+//     return value*2;
+// }
+
+// console.log(arr.map(arrMap));
+// console.log(arr);
+
+// function arrFilter(value){
+//     return value > 5;
+// }
+// console.log(arr.filter(arrFilter));
+// console.log(arr);
+
+// function arrReduce(total, value){
+//     return total + value;
+// }
+// console.log(arr.reduce(arrReduce));
+// console.log(arr.reduce(arrReduce, 10)); // The reduce() method can accept an initial value:
+
+// function arrReduceRight(total, value){
+//     return total + value;
+// }
+// console.log(arr.reduceRight(arrReduceRight));
+
+// const arry = [5, 2, 1, 4, 5, 9, 10, 55];
+
+// const arrfrom = Array.from("ljfa;lksdfjakldsfj")
+
+// function arrEvery(value){
+//     return value >= 1;
+// }
+// console.log(arry.every(arrEvery));
+
+// function arrEvery(value){
+//     return value > 8;
+// }
+// console.log(arry.some(arrEvery));
+
+// console.log(arry.indexOf(55) + 1);
+// console.log(arry.lastIndexOf(5) + 1);
+// function arrFind(value){
+//     return value > 5;
+// }
+// console.log(arry.find(arrFind));
+// console.log(arry.findIndex(arrFind)+1);
+// console.log(arrfrom);
+// console.log(arry.includes(3));
+
+// const players = ["Virat", "Rohit", "Rahul"];
+
+// players.push("Dhoni");
+
+// console.log(players);
+
+// {
+//     const players = ["Dhoni", "Rohit", "Rahul"];
+//     console.log(players)
+    
+// }
+// {
+//     const players = ["Dhoni", "Rohit", "Rahul"];
+//     console.log(players)
+    
+// }
+// {
+//     const players = ["Dhoni", "Rohit", "Rahul"];
+//     console.log(players)
+    
+// }
+
+// console.log(players)
+
+// const date = Date.parse("10/31/2022");
+
+// const newdate = new Date().getFullYear();
+// document.querySelector(".result").innerHTML = newdate;
+// const num = Math.random();
+// console.log(Math.ceil(num*6))
+
+// function getRndInteger(min, max) {
+//     return Math.floor(Math.random() * (max - min + 1) ) + min;
+// }
+// console.log(getRndInteger(1, 20))
+// let day;
+// switch (new Date().getDay()){
+//     case 0:
+//     case 6:
+//         day = "Weadend";
+//         break;
+//     default:
+//         day = "Weakday"
+// }
+
+// console.log(day);
+
+for (let i = 1; i <= 5; i++) {
+    
 }
-console.log(arr)
