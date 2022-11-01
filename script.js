@@ -221,7 +221,125 @@
 // }
 
 // console.log(day);
+// let number = 10;
+// let text = "";
 
-for (let i = 1; i <= 5; i++) {
+// for (let i = 1; i <= number; i++) {
     
-}
+//     for (let j = 1; j <= i; j++) {
+//         text += "*"; 
+//     }
+//     text += "\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//     for (let j = 1; j <= number - i; j++) {
+//         text+=" ";
+//     }
+//     for (let k = 1; k <= i; k++) {
+//         text+="*"
+//     }
+//     text+="\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//     for (let j = 1; j <= number - i; j++) {
+//         text+=" ";
+//     }
+//     for (let k = 1; k <= i; k++) {
+//         text+=" *"
+//     }
+//     text+="\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//     for (let j = number; j >=i ; j--) {
+//         text+="*"
+//     }
+//     text+="\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//    for (let j = 1; j <= i; j++) {
+//         text+=" "
+//    }
+//    for (let k = i; k <= number; k++) {
+//         text+="*"
+//    }
+//    text+="\n"
+// }
+// for (let i = 1; i <= number; i++) {
+//     for (let j = 1; j <= i; j++) {
+//          text+=" "
+//     }
+//     for (let k = i; k <= number; k++) {
+//          text+=" *"
+//     }
+//     text+="\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//     for (let k = number; k >= i; k--) {
+//         text+=" "
+//     }
+//     for (let j = 1; j <= i; j++) {
+//         text+=" *"
+//     }
+//     text+="\n"
+// }
+// for (let i = 1; i <= number -1; i++) {
+//     for (let j = 0; j <= i; j++) {
+//         text+=" "
+//     }
+//     for (let k = number -1; k >= i; k--) {
+//         text+=" *"
+//     }
+//     text+="\n"
+// }
+
+// for (let i = 1; i <= number; i++) {
+//     for (let k = number; k >= i; k--) {
+//         text+=" "
+//     }
+//     for (let j = 1; j <= i; j++) {
+//         if (j==1 || j==i) {
+//             text+="* "
+//         } else {
+//             text+="  "
+//         }
+//     }
+//     text+="\n"
+// }
+// for (let i = 1; i <= number -1; i++) {
+//     for (let j = 0; j <= i; j++) {
+//         text+=" "
+//     }
+//     for (let k = number -1; k >= i; k--) {
+//         if (k==number -1 || k==i) {
+//             text+="* "
+//         } else {
+//             text+="  "
+//         }
+//     }
+//     text+="\n"
+// }
+
+// console.log(text)
+
+// const player = {name: "Virat", age: 35, sport: "Cricket"};
+// for (const x in player) {
+//     console.log(player[x]+" ");
+// }
+let text = "";
+let i = "0";
+// while (i < 10) {
+//     text+=i + "\n";
+//     i++
+// }
+// console.log(text)
+
+do {
+    text += "\n The number is " + i;
+    i++;
+}while (i < 10);  
+console.log(text)
