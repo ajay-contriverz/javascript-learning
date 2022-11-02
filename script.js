@@ -330,16 +330,90 @@
 // for (const x in player) {
 //     console.log(player[x]+" ");
 // }
-let text = "";
-let i = "0";
+// let text = "";
+// let i = "0";
 // while (i < 10) {
 //     text+=i + "\n";
 //     i++
 // }
 // console.log(text)
 
-do {
-    text += "\n The number is " + i;
-    i++;
-}while (i < 10);  
-console.log(text)
+// do {
+//     text += "\n The number is " + i;
+//     i++;
+// }while (i < 10);  
+// console.log(text)
+// function checkNum(){
+//     let input = document.querySelector("#input").value;
+//     const output = document.querySelector(".result");
+//     try{
+//         if(input=="") throw "Enter a number";
+//         if(input>25) throw "to high";
+//         if(isNaN(input)) throw "Please enter a number";
+//         if(input<15) throw "to low";
+//         if(input>=15 && input <= 25) throw "Your entered right number";
+//     } 
+//     catch(err){
+//         output.innerHTML = err
+//     }
+//     finally{
+//         document.querySelector("#input").value = ""
+//     }
+// }
+
+// console.log(this);
+
+// const thisFus = function(a, b) {
+//     console.log(this)
+//     return a + b;
+// }
+// const thisarw = () => console.log(this)
+// thisFus();
+// thisarw();
+
+// const obj = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     fullName: function(){
+//         const fullNameArw = () => {
+//             console.log(this)
+//             console.log( this.firstName + " " + this.lastName)
+//         }
+//         fullNameArw()
+//     },
+// }
+// obj.fullName()
+
+// class car {
+//     constructor(name, year){
+//         this.name = name;
+//         this.year= year;
+//     }
+//     carAge(){
+//         const age = new Date().getFullYear();
+//         return age - this.year;
+//     }
+// }
+
+// const carNew = new car("MBW", 2015);
+// console.log(carNew.name + " " + carNew.year)
+// console.log("The car age is "+ carNew.carAge() + " years")
+
+const myObj = {
+    name: "John",
+    age: 30,
+    cars: [
+      {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+      {name:"BMW", models:["320", "X3", "X5"]},
+      {name:"Fiat", models:["500", "Panda"]}
+    ]
+}
+let x;
+const objLength = myObj.cars.length;
+for (let i = 0; i < objLength; i++) {
+    let x = myObj.cars[i];
+    console.log(x.name+"\n")
+    for (const key in x.models) {
+        console.log(x.models[key])
+    }
+}
