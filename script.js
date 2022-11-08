@@ -450,3 +450,22 @@ const playerOne = new Player("virat", "kohli", 1988, "right hand batsman");
 const playerTwo = new Player("rohit", "sharma", 1986, "right hand batsman");
 console.log(`Player 1: His name is ${playerOne.fullName()} and his age is ${playerOne.age()} and he is a ${playerOne.player}.`)
 console.log(`Player 2: His name is ${playerTwo.fullName()} and his age is ${playerTwo.age()} and he is a ${playerTwo.player}.`)
+
+
+function myDisplayer(some) {
+    console.log(some)
+  }
+  
+  let myPromise = new Promise(function(myResolve, myReject) {
+    let x = 0;  
+    if (x == 0) {
+      myResolve("OK");
+    } else {
+      myReject("Error");
+    }
+  });
+  
+  myPromise.then(
+    function(value) {myDisplayer(value);},
+    function(error) {myDisplayer(error);}
+  );
