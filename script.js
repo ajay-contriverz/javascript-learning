@@ -399,21 +399,54 @@
 // console.log(carNew.name + " " + carNew.year)
 // console.log("The car age is "+ carNew.carAge() + " years")
 
-const myObj = {
-    name: "John",
-    age: 30,
-    cars: [
-      {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
-      {name:"BMW", models:["320", "X3", "X5"]},
-      {name:"Fiat", models:["500", "Panda"]}
-    ]
-}
-let x;
-const objLength = myObj.cars.length;
-for (let i = 0; i < objLength; i++) {
-    let x = myObj.cars[i];
-    console.log(x.name+"\n")
-    for (const key in x.models) {
-        console.log(x.models[key])
+// const myObj = {
+//     name: "John",
+//     age: 30,
+//     cars: [
+//       {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+//       {name:"BMW", models:["320", "X3", "X5"]},
+//       {name:"Fiat", models:["500", "Panda"]}
+//     ]
+// }
+// let x;
+// const objLength = myObj.cars.length;
+// for (let i = 0; i < objLength; i++) {
+//     let x = myObj.cars[i];
+//     console.log(x.name+"\n")
+//     for (const key in x.models) {
+//         console.log(x.models[key])
+//     }
+// }
+
+// const person = {
+//     firstName: "John",
+//     lastName: "Doe",
+//     language: "",
+//     set lang(lang) {
+//       this.language = lang.toUpperCase();
+//     }
+//   };
+  
+//   person.lang = "en";
+// console.log(person.language);
+
+
+function Player(first, last, birth, playerType){
+    this.firstName = first;
+    this.lastName = last;
+    this.birthYear = birth;
+    this.player = playerType;
+    this.age = function(){
+        let lethisAge = 2022 - this.birthYear;
+        return lethisAge;
     }
 }
+
+Player.prototype.fullName = function(){
+    let fullName = this.firstName + " " + this.lastName;
+    return fullName;
+}
+const playerOne = new Player("virat", "kohli", 1988, "right hand batsman");
+const playerTwo = new Player("rohit", "sharma", 1986, "right hand batsman");
+console.log(`Player 1: His name is ${playerOne.fullName()} and his age is ${playerOne.age()} and he is a ${playerOne.player}.`)
+console.log(`Player 2: His name is ${playerTwo.fullName()} and his age is ${playerTwo.age()} and he is a ${playerTwo.player}.`)
