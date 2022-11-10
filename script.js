@@ -431,41 +431,272 @@
 // console.log(person.language);
 
 
-function Player(first, last, birth, playerType){
-    this.firstName = first;
-    this.lastName = last;
-    this.birthYear = birth;
-    this.player = playerType;
-    this.age = function(){
-        let lethisAge = 2022 - this.birthYear;
-        return lethisAge;
-    }
-}
+// function Player(first, last, birth, playerType){
+//     this.firstName = first;
+//     this.lastName = last;
+//     this.birthYear = birth;
+//     this.player = playerType;
+//     this.age = function(){
+//         let lethisAge = 2022 - this.birthYear;
+//         return lethisAge;
+//     }
+// }
 
-Player.prototype.fullName = function(){
-    let fullName = this.firstName + " " + this.lastName;
-    return fullName;
-}
-const playerOne = new Player("virat", "kohli", 1988, "right hand batsman");
-const playerTwo = new Player("rohit", "sharma", 1986, "right hand batsman");
-console.log(`Player 1: His name is ${playerOne.fullName()} and his age is ${playerOne.age()} and he is a ${playerOne.player}.`)
-console.log(`Player 2: His name is ${playerTwo.fullName()} and his age is ${playerTwo.age()} and he is a ${playerTwo.player}.`)
+// Player.prototype.fullName = function(){
+//     let fullName = this.firstName + " " + this.lastName;
+//     return fullName;
+// }
+// const playerOne = new Player("virat", "kohli", 1988, "right hand batsman");
+// const playerTwo = new Player("rohit", "sharma", 1986, "right hand batsman");
+// console.log(`Player 1: His name is ${playerOne.fullName()} and his age is ${playerOne.age()} and he is a ${playerOne.player}.`)
+// console.log(`Player 2: His name is ${playerTwo.fullName()} and his age is ${playerTwo.age()} and he is a ${playerTwo.player}.`)
 
 
-function myDisplayer(some) {
-    console.log(some)
+// function myDisplayer(some) {
+//     console.log(some)
+//   }
+  
+//   let myPromise = new Promise(function(myResolve, myReject) {
+//     let x = 0;  
+//     if (x == 0) {
+//       myResolve("OK");
+//     } else {
+//       myReject("Error");
+//     }
+//   });
+  
+//   myPromise.then(
+//     function(value) {myDisplayer(value);},
+//     function(error) {myDisplayer(error);}
+//   );
+
+
+// let person = {
+//   name: 'John',
+//   age: 25,
+// };
+
+// person.ssn = '123-45-6789';
+
+// person.name = 'John Doe';
+
+// delete person.age;
+
+
+// console.log(person);
+
+// let age = 25;
+// let newAge = age;
+
+// newAge = newAge + 1;
+// console.log(age, newAge);
+
+// var y, x;  
+  
+// [y=10, x=10] = [, 5];  
+// console.log(y);
+// console.log(x);
+
+
+// const restaurant = {
+//   resName: "abc",
+//   category: ["Punjabi", "Italian", "Chines"],
+//   openHours: {
+//     mon:{
+//       open: "12",
+//       close: "22"
+//     },
+//     wed:{
+//       open: "12",
+//       close: "22"
+//     },
+//     sat: {
+//       open: "0",
+//       close: "22"
+//     },
+//   }
+// }
+
+// const {...other} = restaurant;
+// console.log(other)
+// const obj = [0, 1, ...restaurant.category]
+// console.log(obj)
+// const {resName: name , category: type, openHours: hour} = restaurant;
+// console.log(name, type, hour);
+
+// const num = function(...numbers) {
+//   let sum = 0 ;
+//   for (let index = 0; index < numbers.length; index++) {
+//     sum += numbers[index];    
+//   }
+//   console.log(sum)
+// }
+
+// num(2, 5, 2, 5, 9, 6);
+
+
+// let guest = 2;
+
+// console.log(guest || null || 15)
+// console.log(guest && 10)
+
+// const game = {
+//   team1 : "Bayern Munich",
+//   team2 : "Borrussia Dortmund",
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski'
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Getze'
+//     ]
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5
+//   }
+// }
+
+
+// const [players1, players2] = game.players;
+// const [gk, ...fieldPlayers] = players1;
+// const allPlayers = [...players1, ...players2];
+// const players1Final = [...players1, "Thiago", "Coutinho", "Perisic"];
+// const {team1:team1, x:draw, team2:team2} = game.odds;
+// const {odds: {team1, x:draw, team2}} = game;
+
+// const printGoals = function(players){
+//   console.log(`${players.length} goals were scored`)
+// }
+
+// const [...players] = game.scored;
+
+
+// console.log(players1, players2);
+// console.log(gk, fieldPlayers);
+// console.log(allPlayers);
+// console.log(players1Final);
+// console.log(team1, draw, team2);
+// printGoals(players);
+// team1 > team2 && console.log("team 1 is more likely to win.")
+// team1 < team2 && console.log("team 2 is more likely to win.")
+
+// const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+// const openHours = {
+//   [days[2]]: {
+//     open: 0,
+//     close: 10
+//   },
+//   [days[3]]: {
+//     open: 9,
+//     close: 10
+//   },
+//   [days[5]]: {
+//     open: 9,
+//     close: 10
+//   }
+// }
+// const checkDay = "adf";
+
+// const closed = openHours[checkDay];
+// const closedMsg = openHours[checkDay] ?? `On ${checkDay} restaurant will closed`;
+// const openMsg = openHours[checkDay] ?? `On ${checkDay} the restaurant is Open at ${openHours[checkDay]?.open}:AM & closed at ${openHours[checkDay]?.close}:PM`;
+// console.log(closed ? closedMsg : openMsg)
+
+
+// const arr = (rounds, winRate) => {
+//   const totalWin = (rounds / 100) * winRate;
+//   const totalLos = rounds - totalWin;
+//   const finalScore = []
+//   for (let i = 0; i < totalWin; i++) {
+//     const winSign = 1;
+//     finalScore.push(winSign)
+//   }
+//   for (let i = 0; i < totalLos; i++) {
+//     const lossSign = 0;
+//     finalScore.push(lossSign)
+//   }
+//   for (let k = 0; k < finalScore.length; k++) {
+//     var h = Math.floor(Math.random() * (k + 1));
+//     var temp = finalScore[k];
+//     finalScore[k] = finalScore[h];
+//     finalScore[h] = temp;
+//   }
+//   console.log(finalScore)
+// }
+
+// arr(10, 80)
+
+const game = {
+  team1 : "Bayern Munich",
+  team2 : "Borrussia Dortmund",
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski'
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Getze'
+    ]
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5
   }
-  
-  let myPromise = new Promise(function(myResolve, myReject) {
-    let x = 0;  
-    if (x == 0) {
-      myResolve("OK");
-    } else {
-      myReject("Error");
-    }
-  });
-  
-  myPromise.then(
-    function(value) {myDisplayer(value);},
-    function(error) {myDisplayer(error);}
-  );
+}
+
+for (const [index, value] of game.scored.entries()) {
+  console.log(`Goal: ${index+1} ${value}`)
+}
+
+const {odds: {team1: team1, x: draw, team2: team2}} = game;
+
+console.log(`Odd of Victory ${game.team1}: ${team1}\nOdd of Draw: ${draw} \nOdd of Victory ${game.team2}: ${team2}`)
