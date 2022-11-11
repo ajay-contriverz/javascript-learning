@@ -652,51 +652,170 @@
 
 // arr(10, 80)
 
-const game = {
-  team1 : "Bayern Munich",
-  team2 : "Borrussia Dortmund",
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski'
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Getze'
-    ]
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5
+// const game = {
+//   team1 : "Bayern Munich",
+//   team2 : "Borrussia Dortmund",
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski'
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Getze'
+//     ]
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5
+//   }
+// }
+
+// for (const [index, value] of game.scored.entries()) {
+//   console.log(`Goal: ${index+1} ${value}`)
+// }
+
+// const {odds: {team1: team1, x: draw, team2: team2}} = game;
+
+// console.log(`Odd of Victory ${game.team1}: ${team1}\nOdd of Draw: ${draw} \nOdd of Victory ${game.team2}: ${team2}`)
+
+// const exam = new Map([
+//   ["question", "Who is the Indian Cricket team caption?"],
+//   [1, "Virat"],
+//   [2, "Rahul"],
+//   [3, "Rohit"],
+//   ["correct", 3],
+//   [true, "This is correct Answer:)"],
+//   [false, "Try again!"]
+// ])
+
+// console.log();
+
+// for(const [key, value] of exam){
+//   if(typeof key === "number"){
+//     console.log(`Option ${key}: ${value}`);
+//   }
+// }
+// const answer = Number(prompt(`Enter your Answer (1, 2, 3)`));
+// console.log(`${exam.get(exam.get("correct") === answer)}`);
+
+// const gameEvents = new Map([
+//   [17, "GOAL"],
+//   [36, "Substitions"],
+//   [47, "GOAL"],
+//   [61, "Substitions"],
+//   [64, "Yellow Cards"],
+//   [69, "Red Cards"],
+//   [70, "Substitions"],
+//   [72, "Substitions"],
+//   [76, "GOAL"],
+//   [80, "GOAL"], 
+//   [92, "Yellow Cards"]
+// ])
+// const gameTime = 90;
+// const totalGameTime = [...gameEvents.keys()].pop();
+// console.log(totalGameTime);
+// const events = [...new Set(gameEvents.values())];
+// gameEvents.delete(64);
+// for(const [, value] of gameEvents.entries()){
+//   events.add(value);
+// }
+// console.log(events);
+// console.log(`An evnet happened, on average of, every ${totalGameTime / gameEvents.size} minutes`)
+
+// for(const [key, value] of gameEvents.entries()){
+//   const half = key <= gameTime / 2 ? "First" : "Second"
+//   console.log(`[${half} half]: ${key}: ${value}`);
+// }
+
+// const msg = "hello hello world world";
+
+// console.log(msg.replaceAll("Hello", "Hi"));
+
+// const creditCard = function(number){
+//   const str = number.toString()
+//   const card = str.slice(-4);
+//   return card.padStart(str.length, "*")
+// }
+
+// console.log(creditCard(1450789248521478))
+// console.log(creditCard(1450789248522258))
+// console.log(creditCard(1450789248528769))
+
+// const cmlCase = function(n){
+//   const arr = n.split("_");
+//   const [first, last ] = arr;
+//   const final = first.toLowerCase() + last.toLowerCase().replace(last[0], last[0].toUpperCase())
+//   console.log(final)
+// }
+
+// cmlCase("FIRst_naME");
+
+// const flights = "_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Departure;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30";
+
+// const flight = flights.split("+");
+// for (const one of flight) {
+
+//   const flightDetails = one.split(";");
+//   const [status, from, to , time] = flightDetails;
+//   const statusStr = status.replaceAll("_", " ").trim();
+//   const fromStr = from.slice(0, 3).toUpperCase();
+//   const toStr = to.slice(0, 3).toUpperCase();
+//   const timeStr = time.replace(":", "h:");
+
+//   console.log(`${statusStr.startsWith("Delayed") ? "🔴" : ""} ${statusStr} from ${fromStr} to ${toStr} (${timeStr})`);
+// }
+
+// const greet = greeting => name => console.log(`${greeting} ${name}`);
+
+// const greetName = greet("Hello");
+// greetName("John");
+
+// greet("Hey")("Marry");
+
+const school = {
+  name: "School",
+  code: "SC",
+  addmissions: [],
+  addmission(name, addmissionNumber){
+    return this.addmissions.push([name, addmissionNumber]);
   }
 }
 
-for (const [index, value] of game.scored.entries()) {
-  console.log(`Goal: ${index+1} ${value}`)
+school.addmission("John", 250);
+school.addmission("Smith", 251);
+school.addmission("Sam", 252);
+console.log(school.addmissions);
+
+
+const newSchool = {
+  name: "New School",
+  code: "NS",
+  addmissions: []
 }
 
-const {odds: {team1: team1, x: draw, team2: team2}} = game;
-
-console.log(`Odd of Victory ${game.team1}: ${team1}\nOdd of Draw: ${draw} \nOdd of Victory ${game.team2}: ${team2}`)
+const addmission = school.addmission;
+addmission.call(newSchool, "Rita", 250);
+console.log(newSchool.addmissions)
