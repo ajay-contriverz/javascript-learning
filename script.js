@@ -795,27 +795,139 @@
 
 // greet("Hey")("Marry");
 
-const school = {
-  name: "School",
-  code: "SC",
-  addmissions: [],
-  addmission(name, addmissionNumber){
-    return this.addmissions.push([name, addmissionNumber]);
-  }
-}
+// const school = {
+//   name: "ABC School",
+//   code: "ABC",
+//   addmissions: [],
+//   addmission(name, addmissionNumber){
+//     console.log(`${name} take addmission in ${this.name} with ${this.code + addmissionNumber} addmission number.`)
+//     return this.addmissions.push([name, addmissionNumber]);
+//   }
+// }
 
-school.addmission("John", 250);
-school.addmission("Smith", 251);
-school.addmission("Sam", 252);
-console.log(school.addmissions);
+// school.addmission("John", 250);
+// school.addmission("Smith", 251);
+// school.addmission("Sam", 252);
+// // console.log(school.addmissions);
 
 
-const newSchool = {
-  name: "New School",
-  code: "NS",
-  addmissions: []
-}
+// const newSchool = {
+//   name: "XYZ School",
+//   code: "XYZ",
+//   addmissions: []
+// }
 
-const addmission = school.addmission;
-addmission.call(newSchool, "Rita", 250);
-console.log(newSchool.addmissions)
+// const addmission = school.addmission;
+
+// addmission.call(newSchool, "Rita", 250);
+
+// const newAdd = ["Sam", 144];
+// // addmission.apply(newSchool, newAdd); // apply is old method.
+// addmission.call(newSchool, ...newAdd);
+
+// const newSchoolAdd = addmission.bind(newSchool);
+// const schoolAdd = addmission.bind(school);
+
+// newSchoolAdd("Alexa", 100) 
+// schoolAdd("Shiri", 150) 
+// newSchoolAdd("Ajay", 200) 
+
+// const poll = {
+//   question: 'What is your favourite programing language?',
+//   options: ['0: Javascript', '1: Python', '2: Rust', '3: C++'],
+//   answers: new Array(4).fill(0),
+//   getAnswer(){
+//     const answer = Number(prompt(`${this.question}\n${this.options.join("\n")}\n(Write option number)`));
+
+//     typeof answer === 'number' && answer < this.options.length && this.answers[answer]++;
+//     console.log(this.answers.join(", "))
+//   },
+//   printAns(type = "string"){
+//     if (type === "array"){
+//       console.log(this.answers);
+//     } else if (type === "string"){
+//       console.log(this.answers.join(", "))
+//     }
+//   }
+// }
+// poll.printAns.call({answers: [1, 5, 3, 9, 6, 1]}, "array");
+// const getAnswer = () => {
+//   let recAns = undefined;
+//   recAns = prompt(`${poll.question}\n ${poll.options.join('\n')}\n(Write option number)`);
+//   if (recAns < poll.options.length && recAns != "") {
+//     poll.answers[recAns]++
+//     console.log(`Your favourite programing language is ${poll.options[recAns]}.`)
+//     console.log(poll.answers)
+//   } else if (recAns === "") {
+//     console.log(`Please answer the poll`)
+//   } else {
+//     console.log(`Please select valid option.`)
+//   }
+// }
+
+//  document.querySelector("#click").addEventListener("click", getAnswer);
+//  document.querySelector("#click").addEventListener("click", poll.getAnswer.bind(poll));
+
+
+// const fun = function(){
+//   console.log("hi");
+//   return function(){
+//     console.log("Hello")
+//   }
+// }
+// const functio = fun()
+// functio()
+
+
+// (function(){
+//   const header = document.querySelector("h1");
+//   header.style.color = "red";
+//   document.querySelector("body").addEventListener("click", function(){header.style.color = "blue"})
+// })()
+
+
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+// LECTURES
+
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// let total = 0;
+// for (const transition of movements) {
+//   total += transition;
+//   if (transition > 0) {
+//     console.log(`Your account has been credited with +$${transition} 💚`)
+//   } else {
+//     console.log(`Your account has been debited with -$${Math.abs(transition)} 💔`)
+//   }
+// }
+// console.log(`Total balance is $${total}`)
+// console.log(`========== **** ==========`)
+
+// let total1 = 0;
+// movements.forEach (function(transition){
+//   total1 += transition;
+//   if (transition > 0) {
+//     console.log(`Your account has been credited with +$${transition} 💚`)
+//   } else {
+//     console.log(`Your account has been debited with -$${Math.abs(transition)} 💔`)
+//   }
+// })
+// console.log(`Total balance is $${total1}`)
+
+// const currencies = new Map([
+//   ['USD', 'United States dollar'],
+//   ['EUR', 'Euro'],
+//   ['GBP', 'Pound sterling'],
+// ]);
+
+// currencies.forEach(function(cur, i){
+//   console.log(`${i}: ${cur}`)
+// })
