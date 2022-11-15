@@ -931,3 +931,53 @@
 // currencies.forEach(function(cur, i){
 //   console.log(`${i}: ${cur}`)
 // })
+
+// const julia = [3, 5, 2, 12, 7];
+// const kate = [4, 1, 15, 8, 3];
+
+// const juliaDog = julia.slice(1, -1);
+
+// const juliaDogAge = function(dog){
+//     dog.forEach(function(age, i){
+//         if (age >= 5) {
+//             console.log(`Dog number ${i + 1} is an adult, and is ${age} years old`);
+//         } else {
+//             console.log(`Dog number ${i + 1} is still a puppy 🐶`);
+//         }
+//     })
+// }
+// juliaDogAge(kate);
+
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const euroToUSD = 1.1;
+// const movementsUSD = movements.map(mov => mov * euroToUSD);
+// console.log(movementsUSD)
+
+// const deposits = movements.filter(mov => mov > 0);
+// const withdrowals = movements.filter(mov => mov < 0);
+// const balance = movements.reduce((acc, mov) => acc + mov, 0);
+// const balance = movements.reduce((acc, mov) => acc > mov ? acc : mov, movements[0]);
+
+// console.log(deposits)
+// console.log(withdrowals)
+// console.log(balance)
+
+// const calcAverageHumanAge = function(dogAge){
+    //     const humanAge = dogAge.map(age => age <= 2 ? age * 2 : 16 + age * 4);
+    //     const adultDogs = humanAge.filter(age => age >= 18);
+    //     const calcAvgAdultDogs = adultDogs.reduce((acc, val) => acc + val / adultDogs.length, 0);
+    // const calcAvgAdultDogs = adultDogs.reduce((acc, val, i, arr) => acc + val / arr.length, 0);
+    //     console.log(calcAvgAdultDogs)
+    // }
+    // calcAverageHumanAge(ages)
+
+
+// const ages = [5, 2, 4, 1, 15, 8, 3];
+
+// const calcAverageHumanAge = dogAge => 
+//     dogAge
+//         .map(age => age <= 2 ? age * 2 : 16 + age * 4)
+//         .filter(age => age >= 18)
+//         .reduce((acc, val, i, arr) => acc + val / arr.length, 0);
+
+// console.log(calcAverageHumanAge(ages))
