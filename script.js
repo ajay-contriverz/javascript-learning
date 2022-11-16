@@ -981,3 +981,48 @@
 //         .reduce((acc, val, i, arr) => acc + val / arr.length, 0);
 
 // console.log(calcAverageHumanAge(ages))
+
+
+// const arr = ["Rohit", "Virat", "Rahul", "Dhoni"];
+// const num = [5, 2, 4, 1, -15, 15, -8, 3];
+
+// console.log(arr.sort())
+// console.log(num.sort((a, b) => a - b ))
+
+const dogs = [
+    {
+        weight: 22, curFood: 270, owners:['Alice', 'Bob']
+    },
+    {
+        weight: 8, curFood: 200, owners:['Matilda']
+    },
+    {
+        weight: 13, curFood: 275, owners:['Sarah', 'John']
+    },
+    {
+        weight: 32, curFood: 340, owners:['Michael']
+    }
+]
+
+dogs.forEach(dog => dog.recFood = Math.round(dog.weight ** 0.75 * 28));
+console.log(dogs)
+
+const sarahDog = dogs.find(dog => dog.owners.includes('Sarah'))
+console.log(`Sarah's dog eating too ${sarahDog.curFood > sarahDog.recFood ? "much" : "little"}!`)
+
+
+const ownersEatTooMuch = dogs.filter(dog => dog.curFood > dog.recFood).map(dog => dog.owners).flat();
+const ownersEatTooLittle = dogs.filter(dog => dog.curFood < dog.recFood).map(dog => dog.owners).flat();
+
+console.log(`"${ownersEatTooMuch.join(" and ")}'s dogs eat too much!" and "${ownersEatTooLittle.join(" and ")}'s dogs eat too little!"`);
+
+const exatFoodDog = dogs.some(dog => dog.curFood === dog.recFood);
+const okFoodDog = dogs.some(dog => dog.curFood > dog.recFood * 0.90 && dog.curFood < dog.recFood * 1.10);
+
+console.log(`there is any dog eating EXACTLY the amount of food that is recommended: ${exatFoodDog}`)
+console.log(`there is any dog eating OKKKK the amount of food that is recommended: ${okFoodDog}`)
+
+const cheFoodOk = dog => dog.curFood > dog.recFood * 0.9 && dog.curFood < dog.recFood * 1.1;
+const okFoodDogArr = dogs.filter(cheFoodOk)
+
+console.log(okFoodDogArr)
