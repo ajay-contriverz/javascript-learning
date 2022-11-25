@@ -110,7 +110,7 @@ const options ={
   second: "2-digit",
   hour12: true
 }
-let currentUser;
+let currentUser, logoutInterval;
 let currency;
 
 const transactionDate = function(date, locale){
@@ -178,29 +178,23 @@ const calcBalance = function(transaction){
   labelBalance.innerHTML = currencyFormat(currentUser.locale, currentUser.currency, currentUser.balance);
 }
 
-let logoutSeconds = 5;
 const logoutTimer = function(){
-  
-  const logoutInterval = setInterval(() => {
-    let min = Math.trunc(logoutSeconds / 60);
-    let sec = Math.trunc(logoutSeconds % 60);
-    logoutSeconds--
-    if (sec < 10) {
-      sec = `0${sec}`;
-    }
-    if (min < 10) {
-      min = `0${min}`;
-    }
+  const logClock = () => {
+    let min = String(Math.trunc(logoutSeconds / 60)).padStart(2, 0);
+    let sec = String(logoutSeconds % 60).padStart(2, 0);
     labelTimer.textContent = `${min}:${sec}`
-    if (logoutSeconds == 0){
+    if (logoutSeconds === 0){
       clearInterval(logoutInterval);
+      containerApp.style.opacity = 0;
+      labelWelcome.textContent = `Log in to get started`;
     }
-  }, 1000);
+    logoutSeconds--
+  }
+  let logoutSeconds = 120;
+  logClock()
+  const logoutInterval = setInterval(logClock, 1000);
+  return logoutInterval;
   
-}
-
-const logoutAcc = function(){
-  containerApp.style.opacity = 0;
 }
 
 const calcInterst = function(acc){
@@ -217,10 +211,6 @@ const updateUI = function(acc){
   displayTransaction(acc);
   calcBalance(acc.movements);
   calcInterst(acc);
-  setTimeout(() => {
-    logoutAcc()
-  }, 1000 * 60 * logoutSeconds / 60);
-  logoutTimer();
 }
 
 btnLogin.addEventListener("click", function(){
@@ -233,7 +223,8 @@ btnLogin.addEventListener("click", function(){
     }, 1000);
     updateUI(currentUser);
     containerApp.style.opacity = 1;
-    console.log("clicked")
+    if(logoutInterval) clearInterval(logoutInterval);
+    logoutInterval = logoutTimer();
   } else {
     alert("Username or password in invalid")
   }
@@ -259,6 +250,8 @@ btnTransfer.addEventListener("click", function(e){
       updateUI(currentUser);
     }
   }
+  if(logoutInterval) clearInterval(logoutInterval);
+  logoutInterval = logoutTimer();
   inputTransferTo.value = inputTransferAmount.value = "";
 });
 
@@ -275,6 +268,8 @@ btnLoan.addEventListener("click", function(e){
   } else {
     alert(`Your are not Eligible for ${loanAmount}${currency} loan!`)
   }
+  if(logoutInterval) clearInterval(logoutInterval);
+  logoutInterval = logoutTimer();
   inputLoanAmount.value = "";
 })
 
